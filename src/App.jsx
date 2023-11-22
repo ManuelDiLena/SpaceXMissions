@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Heading, Box, Text, Flex, Spacer, Tag } from '@chakra-ui/react';
 import * as API from './service/launches';
-import logo from './assets/logo-spacex.png';
+import { CiCalendar } from "react-icons/ci";
 
 function App() {
 
@@ -13,17 +14,32 @@ function App() {
 
     return (
         <div>
-            <img src={logo} width={300} />
-            <h1>SpaceX Launches</h1>
-            <ul>
+            <Heading as='h1' size='lg' p='4' m='4'>
+                SpaceX Launches
+            </Heading>
+            <section>
                 {
                     launches.map(launch => (
-                        <li key={launch.id}>
-                            {launch.name}: {launch.date_utc}
-                        </li>
+                        <Box key={launch.id} bg='gray.100' p='4' m='4' borderRadius='lg'>
+                            <Flex>
+                                <Text fontSize='2xl'>
+                                    Mission <strong>{launch.name}</strong>
+                                </Text>
+                                <Spacer />
+                                <Tag p='4' colorScheme={launch.success ? 'green' : 'red'}>
+                                    {launch.success ? 'Success' : 'Failure'}
+                                </Tag>
+                            </Flex>
+                            <Flex align='center'>
+                                <CiCalendar />
+                                <Text fontSize='sm' marginLeft='2'>
+                                    {launch.date_local.split('T')[0]}
+                                </Text>
+                            </Flex>
+                        </Box>
                     ))
                 }
-            </ul>
+            </section>
         </div>
     ) 
 }
