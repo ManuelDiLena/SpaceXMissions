@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { Image } from '@chakra-ui/react';
 import logo from './assets/logo-spacex.png';
-import { LaunchList } from './components/LaunchList';
-import { LaunchDetails } from './components/LaunchDetails';
+import LaunchList from './components/LaunchList';
+import LaunchDetails from './components/LaunchDetails';
 
 function App() {
     return (

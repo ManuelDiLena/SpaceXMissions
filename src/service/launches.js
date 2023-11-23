@@ -14,9 +14,9 @@ export async function getAllLaunches() {
 }
 
 // Function to get a specific
-export async function getLaunchByFlightNumber(flightNumber) {
+export async function getLaunchById(id) {
     try {
-        const res = await fetch(`${API_URL}/launches/${flightNumber}`)
+        const res = await fetch(`${API_URL}/launches/${id}`)
         const data = await res.json()
 
         return data

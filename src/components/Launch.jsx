@@ -1,4 +1,5 @@
 import { Box, Text, Flex, Spacer, Tag, Button, Icon } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { CiCalendar } from "react-icons/ci";
 
 export default function Launch(launch) {
@@ -20,9 +21,11 @@ export default function Launch(launch) {
                 </Text>
             </Flex>
 
-            <Button mt='2' fontSize='sm' colorScheme='purple'>
-                More Details
-            </Button>
+            <Link to={`/launch/${launch.id}`}>
+                <Button mt='2' fontSize='sm' colorScheme='purple'>
+                    More Details
+                </Button>
+            </Link>
         </Box>
     );
 }
