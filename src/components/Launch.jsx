@@ -1,7 +1,7 @@
 import { Box, Text, Flex, Spacer, Tag, Button, Icon } from '@chakra-ui/react';
 import { CiCalendar } from "react-icons/ci";
 
-export function Launch(launch) {
+export default function Launch(launch) {
     return (
         <Box bg='gray.100' p='4' m='4' borderRadius='lg'>
             <Flex>
